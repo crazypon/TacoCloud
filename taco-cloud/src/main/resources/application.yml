@@ -1,5 +1,12 @@
-spring:
+spring: 
     datasource:
-        generate-unique-name: false
-        name: tacocloud
-        
+        hikari:
+            connectionTimeout: 20000
+            maximumPoolSize: 5
+        url: jdbc:postgresql://localhost:5432/tacocloud
+        username: jarvis
+        password: ilnur@089
+    
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
