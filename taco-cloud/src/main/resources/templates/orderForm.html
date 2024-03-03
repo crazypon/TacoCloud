@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <link rel="stylesheet" th:href="@{../styles/styles.css}" />
   </head>
  
   <body>
@@ -55,6 +55,8 @@
       <br/>
  
       <input type="submit" value="Submit Order"/>
+      <span class="bobik" th:if="${#fields.hasErrors('ccCVV')}"
+      th:errors="*{ccCVV}">Ingredient Error Placeholder</span>
     </form>
   </body>
 </html>

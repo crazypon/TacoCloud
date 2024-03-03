@@ -52,7 +52,10 @@ public class TacoOrder {
 
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
-
+    
+    // One to Many relationship here shows that many tacos can be in a order
+    // CascadeType.ALL indicates that all related tacos will be deleted from
+    // database if order is deleted.
     @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>(); 
 
