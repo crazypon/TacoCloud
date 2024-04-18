@@ -48,12 +48,15 @@ public class DesignTacoController {
  
   @GetMapping
   public String showDesignForm() {
+    System.out.println("DESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIGN");
     return "design";
   }
 
   //PostMapping handles POST HTTP request
   @PostMapping
   public String ProcessTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
+    
+    System.out.println("I have been engaged!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     if(errors.hasErrors()) {
       return "design";
     }

@@ -3,6 +3,7 @@ package sia.tacocloud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +33,7 @@ public class OrderController {
     @PostMapping
     public String processOrder(@ModelAttribute TacoOrder tacoOrder, @Valid TacoOrder order, Errors errors, SessionStatus sessionStatus) {
         if(errors.hasErrors()) {
+            System.out.println("There is an error in credentals");
             return "orderForm";
         }
 
